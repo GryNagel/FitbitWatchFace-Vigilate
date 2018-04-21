@@ -1,0 +1,49 @@
+<svg class="background">
+   <g transform="scale(3)">
+    <rect x="0" y="0" width="110" height="66" fill="#3A475B" />
+   </g>
+  
+  <svg class="timeanddate" x="0" y="0" width="100" height="66">
+    <svg class="dateContainer">
+      <text id="day" class="day"/>
+      <text id="date" class="date"/>
+    </svg>
+    <svg viewport-fill="yellow">
+      <line x1="66" y1="78" x2="233" y2="78" fill="white" stroke-width="2" />
+    </svg>
+    <svg class="timeContainer">
+       <text id="time" class="time"/>
+    </svg>
+     
+  </svg>
+  
+  <svg class="stats">
+    
+    <svg class="hBpmContainer">
+       <svg class="hBpmIcon">
+         <image width="23" height="20" href="bmp.png" load="sync" />
+       </svg>
+       <text id="hBpm" />
+    </svg>
+    
+    <svg class="stepsContainer">
+      <svg class="stepsIcon">
+         <image width="26" height="16" href="steps.png" load="sync" />
+       </svg>
+        <text id="steps" />
+    </svg>
+    
+    <svg class="batteryContainer">
+      <svg class="batteryIcon">
+         <image width="26" height="16" href="battery.png" load="sync" />
+       </svg>
+        <text id="battery" />
+    </svg>
+    
+   
+    
+  </svg>
+</svg>
+
+
+

@@ -1,0 +1,21 @@
+{
+  "fitbit": {
+    "appUUID": "d835569f-1097-4f1c-933c-bb3fc58db47b",
+    "appType": "clockface",
+    "appDisplayName": "Vigilate",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Vigilate"
+      }
+    }
+  }
+}
