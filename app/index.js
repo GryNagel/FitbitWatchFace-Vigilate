@@ -6,6 +6,7 @@ import { HeartRateSensor } from "heart-rate";
 import { today, goals } from "user-activity";
 import { charger, battery } from "power";
 
+
 // Update the clock every minute
 clock.granularity = "minutes";
 
@@ -16,6 +17,8 @@ const hBpm = document.getElementById("hBpm");
 const day = document.getElementById("day");
 const date = document.getElementById("date");
 const batteryText = document.getElementById("battery");
+const batteryStatusIcon = document.getElementById("batteryStatusIcon");
+
 
 let time = new Date();
 
@@ -40,12 +43,15 @@ let monthIndex = time.getMonth();
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
   updateSteps();
+  updateDate();
+  updateBatteryStatus();
+  
   let today = evt.date;
   let hours = today.getHours();
   if (preferences.clockDisplay === "12h") {
     // 12h format
-    hours = hours % 12 || 12;
-    hours = util.zeroPad(hours);
+      hours = hours % 12 || 12;
+      hours = util.zeroPad(hours);
   } else {
     // 24h format
     hours = util.zeroPad(hours);
@@ -54,14 +60,14 @@ clock.ontick = (evt) => {
   
   timeText.text = `${hours}:${mins}`;
   
-  updateDate();
-  batteryStatus();
+  
 }
 
-//Battery
-function batteryStatus(){
+
+function updateBatteryStatus(){
   const batteryStatus = Math.floor(battery.chargeLevel) + "%";
   batteryText.text = batteryStatus;
+  batteryStatusIcon.width = (Math.floor(battery.chargeLevel)/100) * 20;
 }
 
 //Get steps
@@ -69,14 +75,12 @@ function updateSteps() {
   steps.text = (today.adjusted.steps);
 }
 
-//HRM
 hrm.onreading = function(){
   hBpm.text = hrm.heartRate;
 }
 
 hrm.start();
 
-//Date
 function updateDate(){
   day.text = `${weekdays[weekindex]}`;
   date.text= `${weekdate} ${monthNames[monthIndex]}`;

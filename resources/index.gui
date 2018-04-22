@@ -35,7 +35,8 @@
     
     <svg class="batteryContainer">
       <svg class="batteryIcon">
-         <image width="26" height="16" href="battery.png" load="sync" />
+         <image width="33" height="17" href="batteryicon.png" load="sync" />
+         <rect class="batteryStatusIcon" id="batteryStatusIcon"/>        
        </svg>
         <text id="battery" />
     </svg>
